@@ -19,8 +19,8 @@ jobs:
           poetry config virtualenvs.create true
           poetry config cache-dir ~/.cache/pypoetry
           poetry install
-          poetry add pytest
+          
 
       - name: Run tests
         run: |
-          pytest
+          poetry run pytest
