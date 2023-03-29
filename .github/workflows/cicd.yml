@@ -15,4 +15,11 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          
+          pip install poetry
+          poetry config virtualenvs.create true
+          poetry config cache-dir ~/.cache/pypoetry
+          poetry install
+
+      - name: Run tests
+        run: |
+          poetry run pytest
