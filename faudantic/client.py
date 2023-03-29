@@ -4,6 +4,7 @@ from faunadb.objects import _Expr
 from faunadb.errors import FaunaError
 from faudantic.json import FaunaJSONEncoder
 
+
 def to_json(obj: _Expr) -> str:
     return FaunaJSONEncoder().encode(obj)
 
@@ -20,12 +21,12 @@ class AsyncFaunaClient:
         The `_Expr` object will be serialized with `FaunaJSONEncoder` from json module so the FaunaDB API can understand it.
         The response will be deserialized by the `FaunaModel` class from orm module.
     """
-    
+
     secret: str
-    
-    def __init__(self, secret: str ):
+
+    def __init__(self, secret: str):
         self.secret = secret
-    
+
     async def query(self, expr: _Expr) -> Any:
         """
         `AsyncFaunaClient.query`
@@ -38,7 +39,7 @@ class AsyncFaunaClient:
         Returns:
             A FaunaDB response.
         """
-        
+
         async with ClientSession() as session:
             async with session.post(
                 "https://db.fauna.com",
@@ -46,8 +47,9 @@ class AsyncFaunaClient:
                 headers={
                     "Authorization": f"Bearer {self.secret}",
                     "Content-type": "application/json",
-                    "Accept": "application/json"
-                }) as response:
+                    "Accept": "application/json",
+                },
+            ) as response:
                 try:
                     data = await response.json()
                     return data["resource"]

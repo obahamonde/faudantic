@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "faudantic"
-version = "0.1.0"
+version = "0.1.1"
 description = ""
 authors = ["Oscar Bahamonde <107950590+obahamonde@users.noreply.github.com>"]
 
