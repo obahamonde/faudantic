@@ -1,11 +1,11 @@
 [tool.poetry]
 name = "faudantic"
-version = "0.1.1"
+version = "0.1.7"
 description = ""
-authors = ["Oscar Bahamonde <107950590+obahamonde@users.noreply.github.com>"]
+authors = ["Oscar Bahamonde <oscar.bahamonde.dev@gmail.com>"]
 
 [tool.poetry.dependencies]
-python = "^3.9"
+python = "^3.8"
 faunadb = "^4.5.0"
 pydantic = {extras = ["dotenv"], version = "^1.10.7"}
 aiohttp = "^3.8.4"

@@ -1,4 +1,4 @@
-__version__ = "0.1.1"
+__version__ = "0.1.7"
 __author__ = "@obahamonde"
 __license__ = "MIT"
 
@@ -22,3 +22,4 @@ from typing import (
     AsyncGenerator,
     AsyncContextManager,
 )
+from faudantic.helpers import fetch, text, blob
